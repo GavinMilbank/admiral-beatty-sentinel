@@ -43,7 +43,7 @@ jobs:
           # For maximum backward compatibility with Hugo modules
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
-        run: script/build.sh
+        run: script/run-build.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
