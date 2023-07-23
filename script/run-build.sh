@@ -1,6 +1,6 @@
 #!/bin/sh -xv
 REPO_HOME=/home/rstudio
-docker run -it \
+docker run \
     -v "$(pwd):${REPO_HOME}" \
     -e REPO_HOME=${REPO_HOME} \
     -e HOME=${REPO_HOME} \
