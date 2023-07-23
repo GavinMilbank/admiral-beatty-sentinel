@@ -1,6 +1,10 @@
-CONTAINER_HOME=/home/rstudio
+#!/bin/sh -xv
+REPO_HOME=/home/rstudio
 docker run -it \
-    -v "$(pwd):${CONTAINER_HOME}" \
-    -e DISABLE_AUTH=true -p 8787 \
+    -v "$(pwd):${REPO_HOME}" \
+    -e REPO_HOME=${REPO_HOME} \
+    -e HOME=${REPO_HOME} \
+    -e DISABLE_AUTH=true \
+    -p 8787 \
     rocker/verse:4.2 \
-    script/build.sh
+    ${REPO_HOME}/script/build.sh
